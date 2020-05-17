@@ -10,7 +10,7 @@ export const post = () => ({
 
 // url, method, body = response 
 
-import { fetchHabits, postHabit } from '../services/habitApi';
+// import { fetchHabits, postHabit } from '../services/habitApi';
 
 // export const ADD_HABIT = 'ADD_HABIT';
 // export const addHabit = habit => dispatch => {

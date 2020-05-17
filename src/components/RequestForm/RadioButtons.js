@@ -1,30 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import styles from './Request.css';
+// import styles from '.css';
 
-// eslint-disable-next-line react/prop-types
-const RadioButton = () => (
+const RadioButtons = ({ handleChange }) => (
   <>
     <label>
-        <input type="radio" name="method" value="value" onChange={handleChange}/>
+        <input type="radio" name="method" value="GET" onChange={handleChange} />GET
     </label>
+      <label>
+          <input type="radio" name="method" value="POST" onChange={handleChange}/>POST
+    </label>
+      <label>
+          <input type="radio" name="method" value="PUT" onChange={handleChange}/>PUT
+    </label>
+      <label>
+          <input type="radio" name="method" value="PATCH" onChange={handleChange}/>PATCH
+        </label>
+      <label>
+          <input type="radio" name="method" value="DELETE" onChange={handleChange}/>DELETE
+        </label>
   </>
-);
-
-const RadioButtons = ({ url, onChange, body, onSubmit }) => (
-  <>
-    <input type="text" name="url" value={url} onChange={onChange}/>
-    
-      <RadioButton value="POST" />
-      <RadioButton value="GET" />
-      <RadioButton value="PATCH" />
-      <RadioButton value="PUT" />
-      <RadioButton value="DELETE" />
-    
-  </>
+); 
 
 RadioButtons.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default RadioButtons;
