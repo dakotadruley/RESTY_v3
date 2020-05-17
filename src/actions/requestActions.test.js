@@ -1,17 +1,15 @@
-import { POST, post } from './requestActions.js';
+import { ADD_REQUEST, addRequest } from './requestActions.js';
+import { makeRequest } from '../services/makeRequest.js';
 
 describe('request actions', () => {
-    it('creates a POST action', () => {
-        const action = post({
-            body: 'that'
+    it('creates an ADD action', () => {
+        const action = addRequest({
+    
         });
 
         expect(action).toEqual({
-            type: POST,
-            payload: {
-                url: 'this',
-                body: 'that'
-            }
+            type: ADD_REQUEST,
+            payload: makeRequest
         });
     });
 });
