@@ -10,18 +10,17 @@ export const post = () => ({
 
 // url, method, body = response 
 
-// import { fetchHabits, postHabit } from '../services/habitApi';
+import { fetchHabits, makeRequest } from '../services/makeRequest.js';
 
-// export const ADD_HABIT = 'ADD_HABIT';
-// export const addHabit = habit => dispatch => {
-//   return postHabit(habit)
-//     .then(createdHabit => {
-//       dispatch({
-//         type: ADD_HABIT,
-//         payload: createdHabit
-//       });
-//     });
-// };
+export const ADD_REQUEST = 'ADD_REQUEST';
+export const addRequest = request => dispatch => {
+  return makeRequest(request)
+    .then(madeRequest => {
+      dispatch({
+        type: ADD_REQUEST,
+        payload: madeRequest
+    });
+});
 
 // export const SET_HABITS = 'SET_HABITS';
 // export const setHabits = () => dispatch => {
